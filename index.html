@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patrick Mahomes - Kansas City Chiefs</title>
+  <style>
+    /* Estilos CSS */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* Menú de navegación */
+    nav {
+      background-color: #E31837; /* Rojo Chiefs */
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #FFB81C; /* Dorado Chiefs */
+      color: #000;
+    }
+
+    /* Encabezado llamativo con imagen principal */
+    header {
+      background: linear-gradient(135deg, #E31837 60%, #FFB81C 100%);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    header img {
+      width: 100%;
+      max-width: 600px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 4px solid #FFB81C;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* Contenedor general */
+    .contenedor {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background: white;
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #E31837;
+      border-bottom: 2px solid #FFB81C;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+    }
+
+    /* Galería de mínimo 5 imágenes */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 2px solid #ddd;
+      transition: transform 0.2s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.03);
+      border-color: #E31837;
+    }
+
+    /* Video responsivo */
+    .video-contenedor {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .video-contenedor iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Tabla con información relevante */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #E31837;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* Botones e inputs de JavaScript */
+    .js-caja {
+      background-color: #fff8e7;
+      border-left: 4px solid #FFB81C;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #E31837;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    button:hover {
+      background-color: #b8122b;
+    }
+
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 140px;
+      margin-right: 8px;
+    }
+
+    /* Modo oscuro activado por JS */
+    body.oscuro {
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+    }
+
+    body.oscuro section {
+      background-color: #2a2a2a;
+    }
+
+    body.oscuro td {
+      border-color: #444;
+    }
+
+    body.oscuro tr:nth-child(even) {
+      background-color: #333;
+    }
+
+    body.oscuro .js-caja {
+      background-color: #383224;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #222;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#galeria">Galería</a>
+    <a href="#video">Video</a>
+    <a href="#estadisticas">Estadísticas</a>
+    <a href="#interactivo">Funciones JS</a>
+  </nav>
+
+  <header id="inicio">
+    <h1>Patrick Mahomes #15</h1>
+    <p>Quarterback de los Kansas City Chiefs • 3x Campeón y MVP del Super Bowl</p>
+    <img 
+      src="a.avif">
+  </header>
+
+  <div class="contenedor">
+    <section>
+      <h2>¿Quién es Patrick Mahomes?</h2>
+      <p>
+        Patrick Lavon Mahomes II (nacido el 17 de septiembre de 1995 en Tyler, Texas) es un mariscal de campo profesional de la NFL que juega para los <strong>Kansas City Chiefs</strong>. Es considerado uno de los mejores quarterbacks de su generación gracias a su potente brazo, creatividad para lanzar desde cualquier ángulo y liderazgo en momentos decisivos.
+      </p>
+    </section>
+
+    <section id="galeria">
+      <h2>Galería de Imágenes (5 fotos)</h2>
+      <div class="galeria">
+        <img src="b.webp">
+        <img src="c.webp">
+        <img src="d.webp">
+        <img src="n.jpg">
+        <img src="OIP.webp">
+      </div>
+    </section>
+
+    <section id="video">
+      <h2>Mejores Jugadas en YouTube</h2>
+      <div class="video-contenedor">
+        <iframe 
+          src="https://www.youtube.com/embed/Y8tT21K3V0" 
+          title="Jugadas de Patrick Mahomes"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section id="estadisticas">
+      <h2>Estadísticas Relevantes por Temporada</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Temporada</th>
+            <th>Equipo</th>
+            <th>Yardas por Pase</th>
+            <th>Touchdowns</th>
+            <th>Intercepciones</th>
+            <th>Logro Destacado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2018</td>
+            <td>Kansas City Chiefs</td>
+            <td>5,097</td>
+            <td>50</td>
+            <td>12</td>
+            <td>MVP de la NFL</td>
+          </tr>
+          <tr>
+            <td>2019</td>
+            <td>Kansas City Chiefs</td>
+            <td>4,031</td>
+            <td>26</td>
+            <td>5</td>
+            <td>Campeón Super Bowl LIV</td>
+          </tr>
+          <tr>
+            <td>2020</td>
+            <td>Kansas City Chiefs</td>
+            <td>4,740</td>
+            <td>38</td>
+            <td>6</td>
+            <td>Subcampeón Super Bowl LV</td>
+          </tr>
+          <tr>
+            <td>2022</td>
+            <td>Kansas City Chiefs</td>
+            <td>5,250</td>
+            <td>41</td>
+            <td>12</td>
+            <td>MVP NFL y Super Bowl LVII</td>
+          </tr>
+          <tr>
+            <td>2023</td>
+            <td>Kansas City Chiefs</td>
+            <td>4,183</td>
+            <td>27</td>
+            <td>14</td>
+            <td>Campeón Super Bowl LVIII</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="interactivo">
+      <h2>Sección Interactiva (3 Funciones JavaScript)</h2>
+
+      <div class="js-caja">
+        <h3>1. Cambiar Tema (Modo Claro / Oscuro)</h3>
+        <p>Presiona el botón para cambiar los colores de toda la página.</p>
+        <button onclick="cambiarTema()">Cambiar Modo Oscuro / Claro</button>
+      </div>
+
+      <div class="js-caja">
+        <h3>2. Dato Curioso Aleatorio</h3>
+        <p id="texto-dato">Haz clic para conocer un dato sobre Patrick Mahomes.</p>
+        <button onclick="mostrarDato()">Ver Dato Curioso</button>
+      </div>
+
+      <div class="js-caja">
+        <h3>3. Calculadora de Promedio de Yardas por Partido</h3>
+        <p>Ingresa las yardas totales y partidos jugados:</p>
+        <input type="number" id="yardas" placeholder="Yardas (ej. 5097)">
+        <input type="number" id="partidos" placeholder="Partidos (ej. 16)">
+        <button onclick="calcularPromedio()">Calcular</button>
+        <p id="resultado-promedio" style="margin-top: 8px; font-weight: bold;"></p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Proyecto Web • Patrick Mahomes • Listo para publicar en Vercel</p>
+  </footer>
+
+  <script>
+    // Función 1: Alternar modo oscuro
+    function cambiarTema() {
+      document.body.classList.toggle("oscuro");
+    }
+
+    // Función 2: Mostrar un dato aleatorio
+    function mostrarDato() {
+      const datos = [
+        "Su padre, Pat Mahomes, fue lanzador profesional en las Grandes Ligas de Béisbol (MLB).",
+        "En 2018 se convirtió en el segundo quarterback en la historia en lanzar 5,000 yardas y 50 touchdowns en una misma temporada.",
+        "Fue seleccionado en la posición número 10 del Draft de la NFL en 2017.",
+        "Es copropietario de los Kansas City Royals (MLB) y del Sporting Kansas City (MLS).",
+        "Ganó 3 anillos de Super Bowl antes de cumplir los 29 años de edad."
+      ];
+      const indice = Math.floor(Math.random() * datos.length);
+      document.getElementById("texto-dato").textContent = datos[indice];
+    }
+
+    // Función 3: Calcular promedio de yardas por partido
+    function calcularPromedio() {
+      const yardas = parseFloat(document.getElementById("yardas").value);
+      const partidos = parseFloat(document.getElementById("partidos").value);
+      const resultado = document.getElementById("resultado-promedio");
+
+      if (isNaN(yardas) || isNaN(partidos) || partidos <= 0) {
+        resultado.textContent = "Por favor, ingresa valores válidos mayores a 0.";
+        return;
+      }
+
+      const promedio = (yardas / partidos).toFixed(2);
+      resultado.textContent = "Promedio: " + promedio + " yardas por partido.";
+    }
+  </script>
+
+</body>
+</html>
